@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>student management system</title>
+  </head>
+  <body>
+    <h2>STUDENT MANAGEMENT SYSTEM</h2>
+    <label>List all students</label>
+    <button><a href="/getAllStudents">Get all students</a></button>
+
+    <div>
+      <% if(data &&data == true){ %>
+    
+    </div>
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Place</th>
+            <th>standard</th>
+            <th>medium</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0;i<7;i++) { %>
+
+            <tr>
+                <td><%=allStudents[i].name%></td>
+                <td>2<%=allStudents[i].palce%></td>
+                <td><%=allStudents[i].standard%></td>
+                <td><%=allStudents[i].medium%></td>
+                <td><button><a href="/delete/?id=<%=allStudents[i]._id%>">delete</a></button></td>
+                <td><button><a href="/update/?id=<%=allStudents[i]._id%>">Update</a></button></td>
+                 
+            </tr>
+
+
+       <% } %> 
+        
+        
+    </tbody>
+</table>
+
+<%} %>
+
+    <br />
+    
+
+    <h3>Add new student</h3>
+    
+    <form action="/addStudent" method="post">
+        <label>Name...:</label>
+      <input type="text" name="name" id="name" placeholder="your name" /><br />
+      <label>Place....:</label>
+      <input type="text" name="place" id="place" placeholder="your place" />
+      <br />
+      <label>standard</label>
+      <input
+        type="number"
+        name="standard"
+        id="standard"
+        placeholder="your standard"
+      /><br />
+      <label>Medium</label>
+      <input
+        type="string"
+        name="medium"
+        id="medium"
+        placeholder="your medium"
+      />
+      <input type="submit" />
+    </form>
+
+<br>
+    <button><a href="/">Reset</a></button>
+  </body>
+</html>

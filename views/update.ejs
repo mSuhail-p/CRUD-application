@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Update Student</h1>
+    <form action="/makeUpdate" method="post">
+      <label>Name...:</label>
+      <input type="text" value="<%=studentToUpdate.name%>" name="name" />
+      <br />
+
+      <label>Place....:</label>
+      <input type="text" value="<%=studentToUpdate.place%>" name="place" />
+      <br />
+
+      <label>standard</label>
+      <input
+        type="number"
+        value="<%=studentToUpdate.standard%>"
+        name="standard"
+      />
+      <br />
+      <label>medium:</label>
+      <input type="text" value="<%=studentToUpdate.medium%>" name="medium" />
+      <input type="hidden" value="<%=studentToUpdate._id%>" name="id">
+      <input type="submit">
+    </form>
+
+    <br>
+    <br>
+    <button><a href="/">Back</a></button>
+  </body>
+</html>
