@@ -15,10 +15,12 @@ export class controller {
 
   async getAllStudents(req: Request, res: Response): Promise<void> {
     try {
+      console.log('klfdsjldkfjlsdjflsdjflskjflsjflsdkjflsdjflksdjflksjdflksfjk')
       let allStudents = await student.find({}).sort({ _id: -1 });
+      console.log(allStudents,'fksdfljsjdlkj')
 
-      let data = true;
-      res.render("index", { data, allStudents });
+      // let data = true;
+      res.render("index", { data:true, allStudents });
     } catch (err) {
       console.log("To get all studetns:", err);
     }
@@ -47,7 +49,8 @@ export class controller {
       let id = req.query.id;
       let deletedData = await student.deleteOne({ _id: id });
 
-      res.render("index", { data: false });
+      // res.render("index", { data: false });
+      res.redirect('/')
     } catch (err) {
       console.log("delete student:", err);
     }

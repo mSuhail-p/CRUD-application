@@ -7,11 +7,13 @@
   </head>
   <body>
     <h2>STUDENT MANAGEMENT SYSTEM</h2>
+    <%if(data == false){ %>
     <label>List all students</label>
+ 
     <button><a href="/getAllStudents">Get all students</a></button>
-
+    <%} %>
     <div>
-      <% if(data &&data == true){ %>
+      <% if(data == true){ %>
     
     </div>
     <table>
@@ -24,16 +26,16 @@
         </tr>
     </thead>
     <tbody>
-        <% for(let i=0;i<7;i++) { %>
+        <% for(let i=0;i<allStudents.length;i++) { %>
 
             <tr>
-                <td><%=allStudents[i].name%></td>
-                <td>2<%=allStudents[i].palce%></td>
-                <td><%=allStudents[i].standard%></td>
-                <td><%=allStudents[i].medium%></td>
-                <td><button><a href="/delete/?id=<%=allStudents[i]._id%>">delete</a></button></td>
-                <td><button><a href="/update/?id=<%=allStudents[i]._id%>">Update</a></button></td>
-                 
+              <td><%=allStudents[i]?.name%></td>
+              <td><%=allStudents[i]?.place%></td>
+              <td><%=allStudents[i]?.standard%></td>
+              <td><%=allStudents[i]?.medium%></td>
+              <td><button><a href="/delete/?id=<%=allStudents[i]?._id%>">delete</a></button></td>
+              <td><button><a href="/update/?id=<%=allStudents[i]?._id%>">Update</a></button></td>
+               
             </tr>
 
 
